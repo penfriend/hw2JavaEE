@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<bean id="manicure" class="com.mycompany.app.Manicure">
+</bean>
+<bean id="pedicure" class="com.mycompany.app.Pedicure">
+</bean>
+<bean id="haircut" class="com.mycompany.app.Haircut">
+</bean>
+<bean id="salon1" class="com.mycompany.app.BeautySalon">
+<constructor-arg name="name" value="Elegance"/>
+<property name="address" value="Kreshatyk street 11" />
+<property name="services">
+<list >
+<ref bean="manicure" />
+<ref bean="haircut" />
+</list></property>
+</bean>
+<bean id="salon2" class="com.mycompany.app.BeautySalon">
+<constructor-arg name="name" value="Brilliance"/>
+<property name="address" value="Kreshatyk street 17" />
+<property name="services">
+<list >
+<ref bean="manicure" />
+<ref bean="pedicure" />
+<ref bean="haircut" />
+</list></property>
+</bean>
+
+</beans>
